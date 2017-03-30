@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 int main(void) {
-  int i = 0;
+  long long n = 1;
 
-  while(i <= 50){
-  printf("i is %i \n", i);
-  i++;
+  for(int i = 0; i <= 64; i++){
+  printf("n is %lld\n", n);
+  n = n * 2;
   }
 }
