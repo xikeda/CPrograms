@@ -1,17 +1,41 @@
-  #include <cs50.h>
-  #include <stdio.h>
+/*
+  Problem Set 1
+  Brandon Ikeda
+  CS 50 EDX 2017
+  Harvard University
+  April 2nd 2017
+*/
 
-  int main(void) {
-    int size, row, col, space;
-    do{
-      printf("Please enter the size of half-pyramid you want to build between 1 and 23: ");
-      size = get_int();
-    }while(size < 1 || size > 23);
+#include <cs50.h>
+#include <stdio.h>
 
-    for(row = 0; row <= size; row++){
-      for()
-      printf(" ");
-      printf("#");
-      printf("\n");
+int main(void){
+
+  //Declare Variables
+    int height;
+    int spaces;
+    int dashes;
+
+  //Get input, validate
+    do
+    {
+        printf("Height: ");
+        height = GetInt();
     }
-  }
+    while (height <= 0 || height >= 23);
+
+    //Loop for the rows
+    for (int i = 1; i <= height; i++){
+        //Loop for the spaces and dashes per row
+        for (spaces = (height - i); spaces >= 0; spaces--){
+            printf(" ");
+        }
+        for (dashes = 1; dashes <= i; dashes++){
+            printf("#");
+        }
+        //Go to next line
+        printf("\n");
+    }
+    //Return
+    return 0;
+}
